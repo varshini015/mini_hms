@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+    <div class="container">
+
+        <span class="navbar-brand fw-bold">
+            🏥 Mini HMS
+        </span>
+
+        <div class="ms-auto d-flex gap-2">
+
+            {% if request.user.role == "doctor" %}
+                <a href="/accounts/doctor/" class="btn btn-outline-secondary btn-sm">
+                    Dashboard
+                </a>
+            {% elif request.user.role == "patient" %}
+                <a href="/accounts/patient/" class="btn btn-outline-secondary btn-sm">
+                    Dashboard
+                </a>
+            {% endif %}
+
+            <a href="/accounts/logout/" class="btn btn-outline-danger btn-sm">
+                Logout
+            </a>
+
+        </div>
+    </div>
+</nav>
