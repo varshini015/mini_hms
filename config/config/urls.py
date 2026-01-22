@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
+from .views import serverless_test
 
 def home(request):
     return redirect('/accounts/login/')
@@ -26,5 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('', include('bookings.urls')),
+    path('serverless-test/', serverless_test),
+
 ]
 

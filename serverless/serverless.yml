@@ -1,0 +1,15 @@
+service: mini-hms-serverless
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: ap-south-1
+
+functions:
+  testFunction:
+    handler: handlers.test.hello
+    events:
+      - http:
+          path: test
+          method: get
+          cors: true
